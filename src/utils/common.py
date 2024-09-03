@@ -5,7 +5,7 @@ from ensure import ensure_annotations # type: ignore
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
-from src.logging import logger
+from src import logger
 import joblib
 import base64
 import json
@@ -14,17 +14,18 @@ import json
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
     try:
-        with open(path_to_yaml) as yaml_file:
+        with open (path_to_yaml) as yaml_file:
             content = yaml.safe_load(yaml_file)
-            logger.info(f"yaml file: {path_to_yaml} loaded successfully")
+            logger.info(f"Yaml file: {path_to_yaml} loaded successfully")
             return ConfigBox(content)
+
     except BoxValueError:
-        raise ValueError("yaml file is empty")
-    except Exception as e:
+        raise ValueError("Invalid YAML file")
+    except FileNotFoundError as e:
         raise e
 
 @ensure_annotations
-def create_directory(path_to_directories: list, verbose=True):
+def create_directories(path_to_directories: list, verbose=True):
     """create list of directories
 
     Args:

@@ -6,3 +6,5 @@
 3. Create an requirement file and run the dependencies 
 touch requirements.txt -> Create the file
 pip install -r requirements.txt -> run the file
+3. Added the logger file
+4. prepare/update the common.py and utility

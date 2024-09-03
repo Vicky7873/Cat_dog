@@ -1,0 +1,7 @@
+data_root: data
+
+data_ingestion:
+  root_dir: data/data_ingestion
+  download_url: https://github.com/entbappy/Branching-tutorial/raw/master/cat-dog-data.zip
+  local_data_file: data/data_ingestion/raw_data.zip
+  unzip_dir: data/data_ingestion
