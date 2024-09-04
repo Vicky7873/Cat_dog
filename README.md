@@ -10,3 +10,4 @@ pip install -r requirements.txt -> run the file
 4. prepare/update the common.py and utility
 
 @staticmethod is a decorator in Python used to define methods inside a class that do not require access to the instance (self) or class (cls). This means that @staticmethod can be called on the class itself without needing to create an instance of the class, and it does not modify or rely on instance-specific data
+basically class instance and self not to required to use the function if the fuction have @static method
