@@ -1,6 +1,6 @@
 from src.constants import *
 from src.utils.common import read_yaml, create_directories
-from src.entity import DataIngestionConfig,PrepareBaseModelConfig,CallbackConfig,TrainingConfig
+from src.entity import DataIngestionConfig,PrepareBaseModelConfig,CallbackConfig,TrainingConfig,ModelEvaluationConfig
 import os
 
 
@@ -71,3 +71,15 @@ class ConfigurationManager():
         )
 
         return training_config
+    
+
+    def get_model_eval_config(self) ->ModelEvaluationConfig:
+        eval_config = ModelEvaluationConfig(
+            path_of_model = "data/training/model.keras",
+            training_data = "data/data_ingestion/PetImages",
+            all_params = self.params,
+            params_image_size = self.params.IMAGE_SIZE,
+            params_batch_size = self.params.BATCH_SIZE
+        )
+
+        return eval_config

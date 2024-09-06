@@ -3,6 +3,7 @@ from src import logger
 from src.pipeline.stage_02_Base_model import PrepareBaseModelPipeline
 from src.pipeline.stage_03_callBack_save import CallBackSavePipeline
 from src.pipeline.stage_04_Model_Training_pipeline import ModelTrainingPipeline
+from src.pipeline.stage_05_Model_evaluation import ModelEvaluationPipeline
 
 STAGE_NAME = "Data Ingestion stage"
 try:
@@ -45,5 +46,13 @@ except Exception as e:
     raise e
 
 
-
+STAGE_NAME = "Model Evaluation stage"
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    model_evaluation = ModelEvaluationPipeline()
+    model_evaluation.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx======x")
+except Exception as e:
+    logger.exception(e)
+    raise e
 
