@@ -176,14 +176,14 @@
             const loadingBar = document.getElementById('loadingBar');
 
             // Show image preview
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    imagePreview.src = e.target.result;
-                    imagePreview.classList.add('show');
-                };
-                reader.readAsDataURL(fileInput.files[0]);
-            }
+            // if (fileInput.files && fileInput.files[0]) {
+            //     const reader = new FileReader();
+            //     reader.onload = function (e) {
+            //         imagePreview.src = e.target.result;
+            //         imagePreview.classList.add('show');
+            //     };
+            //     reader.readAsDataURL(fileInput.files[0]);
+            // }
 
             // Show loading animation
             loadingBar.classList.add('loading');
