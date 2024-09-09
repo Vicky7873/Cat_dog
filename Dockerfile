@@ -1,27 +1,11 @@
 FROM python:3.11-slim-buster
 
-# Install system dependencies required for building Python packages and h5py
-RUN apt update -y && \
-    apt install -y awscli \
-    pkg-config \
-    build-essential \
-    libhdf5-dev \
-    libhdf5-serial-dev \
-    libblas-dev \
-    liblapack-dev \
-    gfortran \
-    python3-dev \
-    && apt clean
-
-# Set the working directory inside the container
+RUN apt update -y && apt install awscli -y
 WORKDIR /app
 
-# Copy the entire app directory to the working directory
 COPY . /app
 
-# Install Python dependencies from the requirements.txt file
-RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
-# Command to run the Flask app
+RUN pip install -r requirement.txt
+
 CMD ["python3", "app.py"]
-# for aws
