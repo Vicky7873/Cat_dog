@@ -33,3 +33,4 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 # Command to run the Flask app
 CMD ["python3", "app.py"]
+# for aws
