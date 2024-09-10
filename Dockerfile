@@ -7,6 +7,8 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 # Ensure the model file is copied into the correct path
-COPY data/training/model.keras /app/data/training/model.keras
+# COPY data/training/model.keras /app/data/training/model.keras
+
+EXPOSE 8080
 
 CMD ["python3", "app.py"]
