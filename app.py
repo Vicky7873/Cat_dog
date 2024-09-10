@@ -7,7 +7,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 app = Flask(__name__)
 
-model = tf.keras.models.load_model('data/training/model.keras')
+model = tf.keras.models.load_model('data/training/model.h5')
 
 @app.route('/')
 def index():

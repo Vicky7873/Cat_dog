@@ -19,7 +19,7 @@ save_callbacks:
 
 training:
   root_dir: data/training
-  trained_model_path: data/training/model.keras
+  trained_model_path: data/training/model.h5
 
 
 
