@@ -4,9 +4,9 @@ RUN apt update -y && apt install awscli -y
 WORKDIR /app
 
 COPY . /app
-COPY data/training/model.keras /app/data/training/model.keras
 
 RUN pip install -r requirements.txt
+COPY data/training/model.keras /app/data/training/model.keras
 EXPOSE 8080
 CMD ["python3", "app.py"]
 #for aws
