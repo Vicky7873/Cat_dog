@@ -88,13 +88,7 @@ jobs:
          
       # - name: Stop and remove container if running
       #   run: |
-      #    CONTAINER_ID=$(docker ps -q --filter "name=catdog")
-      #     if [ -n "$CONTAINER_ID" ]; then
-      #       docker stop catdog
-      #       docker rm -fv catdog
-      #     else
-      #       echo "No running container named 'catdog' found."
-      #     fi
+      #    docker ps -q --filter "name=catdog" | grep -q . && docker stop catdog && docker rm -fv catdog
        
       - name: Run Docker Image to serve users
         run: |
